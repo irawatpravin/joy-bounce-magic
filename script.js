@@ -1,46 +1,43 @@
-// =============== CONFIGURATION ===================
-
-// Google Drive direct links for magic book videos
-const VIDEOS = [
-  "https://drive.google.com/uc?export=download&id=1vspBFMoKLNbUDQFxD-UdD2yOWIYrQF9e",
-  "https://drive.google.com/uc?export=download&id=10g7QbNLkYLInxdqc6SQ43fI8Jjkw7Io8",
-  "https://drive.google.com/uc?export=download&id=1GMkxkWbLMbuX0GHETQl_YVjBOHO9CTh_"
+// Audio files (short 20–25 sec music)
+const MUSIC = [
+  "audio/music_folk.mp3",
+  "audio/music_lullaby.mp3",
+  "audio/music_dance.mp3",
+  "audio/music_playful.mp3"
 ];
 
-// Google Drive direct link for magic card image
-const CARD_IMAGE = "https://drive.google.com/uc?export=download&id=1oxMuNmblI3gz0awKFEUo5DRgBWAdF7_X";
-
-// YouTube playlist link (redirect to playlist start)
+// YouTube playlist
 const YOUTUBE_PLAYLIST_URL = "https://www.youtube.com/playlist?list=PLzWh30TTppb3qCxF-xvgDCiRN2QujgQtC";
-
-// =================================================
 
 function startMagic() {
   const name = document.getElementById("kidName").value.trim();
-  if (!name) { 
-    alert("Please enter a name!"); 
-    return; 
+  if(!name) { alert("Please enter a name!"); return; }
+
+  // Show animation section
+  const animSection = document.getElementById("animationSection");
+  animSection.classList.remove("hidden");
+
+  // Display kid's name
+  const nameText = document.getElementById("kidNameText");
+  nameText.innerText = `✨ ${name} ✨`;
+
+  // Add sparkles
+  const sparklesDiv = document.getElementById("sparkles");
+  for(let i=0;i<15;i++){
+    const s = document.createElement("div");
+    s.classList.add("sparkle");
+    s.style.backgroundImage = `url('images/sparkle${(i%3)+1}.png')`;
+    s.style.top = Math.random()*250 + "px";
+    s.style.left = Math.random()*250 + "px";
+    sparklesDiv.appendChild(s);
   }
 
-  // Show mascot section and pick random video
-  const mascotSection = document.getElementById("mascotSection");
-  mascotSection.classList.remove("hidden");
-  const mascotText = document.getElementById("mascotText");
-  mascotText.innerText = `Hello ${name}! Enjoy the magic book ✨`;
+  // Play random music
+  const music = new Audio(MUSIC[Math.floor(Math.random()*MUSIC.length)]);
+  music.play();
 
-  const mascotVideo = document.getElementById("mascotVideo");
-  const randomVideo = VIDEOS[Math.floor(Math.random() * VIDEOS.length)];
-  mascotVideo.src = randomVideo;
-  mascotVideo.play();
-
-  // After 15 seconds, show magic card
-  setTimeout(() => {
-    document.getElementById("magicCard").classList.remove("hidden");
-    document.getElementById("cardImg").src = CARD_IMAGE;
-  }, 15000);
-
-  // After 18 seconds, redirect to YouTube playlist
+  // Redirect after 22 seconds
   setTimeout(() => {
     window.location.href = YOUTUBE_PLAYLIST_URL;
-  }, 18000);
+  }, 22000);
 }
