@@ -1,85 +1,38 @@
-:root{
-  --accent:#fd79a8;
-  --bg1: #ffeaa7;
-  --bg2: #fab1a0;
-  --text:#2d3436;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joy Bounce Magic Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Welcome to the Joy Bounce Magic Book ✨</h1>
+    
+    <div class="input-section">
+      <label for="kidName">Enter your kid's name:</label>
+      <input type="text" id="kidName" placeholder="Type name here">
+      <button onclick="startMagic()">Open Magic Book</button>
+    </div>
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
-  background: linear-gradient(180deg, var(--bg1), var(--bg2));
-  color:var(--text);
-}
+    <div id="mascotSection" class="hidden">
+      <video id="mascotVideo" autoplay muted></video>
+      <p id="mascotText"></p>
+    </div>
 
-.container {
-  max-width:820px;
-  margin:30px auto;
-  text-align:center;
-  padding:20px;
-}
+    <div id="magicCard" class="hidden">
+      <img id="cardImg" src="" alt="Magic Card">
+      <p>Share the magic with your friends!</p>
+    </div>
 
-input[type="text"]{
-  padding:12px 14px;
-  font-size:16px;
-  border-radius:10px;
-  border:1px solid rgba(0,0,0,0.08);
-  width:60%;
-  max-width:380px;
-}
+    <div class="socials">
+      <p>Follow Joy Bounce TV for more magic!</p>
+      <a href="https://www.youtube.com/@joybouncetv" target="_blank">Subscribe on YouTube</a> |
+      <a href="https://www.instagram.com/joybouncetv/" target="_blank">Follow on Instagram</a>
+    </div>
+  </div>
 
-button {
-  margin-left:8px;
-  padding:11px 16px;
-  background:var(--accent);
-  color:white;
-  font-weight:600;
-  border-radius:10px;
-  border:none;
-  cursor:pointer;
-}
-
-.hidden{ display:none; }
-
-/* Book section */
-#bookSection{
-  position:relative;
-  margin-top:20px;
-}
-
-#bookVideo{
-  width:100%;
-  max-width:720px;
-  border-radius:12px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.2);
-}
-
-/* overlay text on top of video */
-.overlayText{
-  position:absolute;
-  top:12%;
-  left:50%;
-  transform:translateX(-50%);
-  width:86%;
-  pointer-events:none;
-  color:white;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-  font-size:22px;
-  line-height:1.25;
-  font-weight:700;
-}
-
-/* Magic card */
-#magicCard { margin-top:20px; }
-#cardCanvas { border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.2); }
-
-/* Player */
-.playerWrap{ margin-top:14px; display:flex; justify-content:center; }
-.socials{ margin-top:10px; font-weight:600; }
-.socials a{ color:var(--text); text-decoration:none; }
-<div class="socials">
-  <p>Follow Joy Bounce TV for more magic!</p>
-  <a href="https://www.youtube.com/@joybouncetv" target="_blank">Subscribe on YouTube</a> |
-  <a href="https://www.instagram.com/joybouncetv/" target="_blank">Follow on Instagram</a>
-</div>
+  <script src="script.js"></script>
+</body>
+</html>
