@@ -1,7 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #fce4ec;
+  /* Joyful background image */
+  background: url('https://via.placeholder.com/1200x800?text=Joyful+Background') no-repeat center center fixed;
+  background-size: cover;
   color: #333;
   margin: 0;
   padding: 0;
@@ -9,6 +11,10 @@ body {
 
 .container {
   padding: 20px;
+  background-color: rgba(255,255,255,0.7); /* Slight transparent overlay for readability */
+  max-width: 600px;
+  margin: 30px auto;
+  border-radius: 15px;
 }
 
 .input-section {
@@ -36,7 +42,8 @@ button {
 }
 
 #mascotVideo {
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 10px;
 }
 
