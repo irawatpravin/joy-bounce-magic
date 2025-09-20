@@ -1,7 +1,7 @@
 /* -------------------------
   CONFIG - replace these
 ---------------------------*/
-const PLAYLIST_ID = "YOUR_PLAYLIST_ID";   // <-- REPLACE with your playlist ID (PLxxxx)
+const PLAYLIST_ID = "PLzWh30TTppb3qCxF-xvgDCiRN2QujgQtC";   // <-- REPLACE with your playlist ID (PLxxxx)
 const NUM_VIDEOS = 12;                    // <-- REPLACE with how many videos in that playlist
 // Note: if you change NUM_VIDEOS, the random index generation below will use that number.
 /* -------------------------
@@ -164,5 +164,5 @@ function showYouTubePlayer(){
   // pick a random index (0-based) — set NUM_VIDEOS to your playlist video count
   const idx = Math.floor(Math.random() * Math.max(1, Number(NUM_VIDEOS)));
   // Use embed videoseries URL — this will autoplay the playlist starting at 'idx'
-  player.src = `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(PLAYLIST_ID)}&index=${idx}&autoplay=1`;
+  player.src = `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(PLzWh30TTppb3qCxF-xvgDCiRN2QujgQtC)}&index=${idx}&autoplay=1`;
 }
