@@ -8,27 +8,37 @@
 </head>
 <body>
   <div class="container">
+    <!-- Logo -->
+    <img src="images/logo.png" alt="Joy Bounce Magic Logo" class="logo">
+
     <h1>✨ Joy Bounce Magic ✨</h1>
     <p>Enter your kid’s name and watch the magic unfold!</p>
+
     <input type="text" id="kidName" placeholder="Type your kid’s name">
     <button onclick="startMagic()">Start Magic</button>
 
     <!-- Magic Book -->
     <div id="bookContainer" class="hidden">
       <img id="magicBook" src="images/magic_book.png" alt="Magic Book">
+    </div>
+
+    <!-- Magic Card with kid name -->
+    <div id="cardContainer" class="hidden">
+      <img id="magicCard" src="images/magic_card.png" alt="Magic Card">
       <h2 id="kidNameText"></h2>
+      <a id="playlistLink" href="#" target="_blank">▶️ Watch More Magic</a>
+    </div>
+
+    <!-- Sparkles container -->
+    <div id="sparklesContainer" class="hidden">
+      <img class="sparkle" src="images/sparkles1.png">
+      <img class="sparkle" src="images/sparkles2.png">
+      <img class="sparkle" src="images/sparkles3.png">
     </div>
 
     <!-- Mascot / Random Video -->
     <div id="videoContainer" class="hidden">
       <video id="mascotVideo" width="320" height="240" autoplay muted playsinline></video>
-    </div>
-
-    <!-- Magic Card -->
-    <div id="cardContainer" class="hidden">
-      <img id="cardImg" src="images/magic_card.png" alt="Magic Card">
-      <p>✨ Tap below to continue the magic ✨</p>
-      <a id="playlistLink" href="#" target="_blank">▶️ Watch More Magic</a>
     </div>
 
     <!-- Social Links -->
