@@ -2,19 +2,16 @@
 
 // Google Drive direct links for magic book videos
 const VIDEOS = [
-  "https://drive.google.com/uc?export=download&id=1Bf0h2-Px1abcd12345", // replace with actual file IDs
-  "https://drive.google.com/uc?export=download&id=1Bf0h2-Px1abcd67890",
-  "https://drive.google.com/uc?export=download&id=1Bf0h2-Px1abcd11223"
+  "https://drive.google.com/uc?export=download&id=1vspBFMoKLNbUDQFxD-UdD2yOWIYrQF9e",
+  "https://drive.google.com/uc?export=download&id=10g7QbNLkYLInxdqc6SQ43fI8Jjkw7Io8",
+  "https://drive.google.com/uc?export=download&id=1GMkxkWbLMbuX0GHETQl_YVjBOHO9CTh_"
 ];
 
 // Google Drive direct link for magic card image
-const CARD_IMAGE = "https://drive.google.com/uc?export=download&id=1Bf0h2-Px1abcd44455";
+const CARD_IMAGE = "https://drive.google.com/uc?export=download&id=1oxMuNmblI3gz0awKFEUo5DRgBWAdF7_X";
 
-// YouTube playlist
-const PLAYLIST_ID = "PLzWh30TTppb3qCxF-xvgDCiRN2QujgQtC";
-
-// Number of videos in your playlist
-const NUM_VIDEOS = 9; // Replace with actual number of videos in playlist
+// YouTube playlist link (redirect to playlist start)
+const YOUTUBE_PLAYLIST_URL = "https://www.youtube.com/playlist?list=PLzWh30TTppb3qCxF-xvgDCiRN2QujgQtC";
 
 // =================================================
 
@@ -42,10 +39,8 @@ function startMagic() {
     document.getElementById("cardImg").src = CARD_IMAGE;
   }, 15000);
 
-  // After 18 seconds, redirect to random YouTube playlist video
+  // After 18 seconds, redirect to YouTube playlist
   setTimeout(() => {
-    const randomIndex = Math.floor(Math.random() * NUM_VIDEOS);
-    const youtubeUrl = `https://www.youtube.com/watch?v=&list=${PLAYLIST_ID}&index=${randomIndex}&autoplay=1`;
-    window.location.href = youtubeUrl;
+    window.location.href = YOUTUBE_PLAYLIST_URL;
   }, 18000);
 }
