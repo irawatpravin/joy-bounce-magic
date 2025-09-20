@@ -50,3 +50,4 @@ function startMagic() {
   // Set YouTube playlist link
   document.getElementById("playlistLink").href = PLAYLIST_URL;
 }
+
