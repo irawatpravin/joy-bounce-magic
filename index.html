@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joy Bounce Magic Book</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joy Bounce Magic Book</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>✨ Welcome to the Joy Bounce Magic Book ✨</h1>
-    
-    <div class="input-section">
-      <label for="kidName">Enter your kid's name:</label>
-      <input type="text" id="kidName" placeholder="Type name here">
-      <button onclick="startMagic()">Open Magic Book</button>
-    </div>
+<div class="container">
+  <h1>✨ Welcome to the Joy Bounce Magic Book ✨</h1>
 
-    <div id="mascotSection" class="hidden">
-      <video id="mascotVideo" autoplay muted></video>
-      <p id="mascotText"></p>
-    </div>
-
-    <div id="magicCard" class="hidden">
-      <img id="cardImg" src="" alt="Magic Card">
-      <p>Share the magic with your friends!</p>
-    </div>
-
-    <div class="socials">
-      <p>Follow Joy Bounce TV for more magic!</p>
-      <a href="https://www.youtube.com/@joybouncetv" target="_blank">Subscribe on YouTube</a> |
-      <a href="https://www.instagram.com/joybouncetv/" target="_blank">Follow on Instagram</a>
-    </div>
+  <div class="input-section">
+    <label for="kidName">Enter your kid's name:</label>
+    <input type="text" id="kidName" placeholder="Type name here">
+    <button onclick="startMagic()">Open Magic Book</button>
   </div>
 
-  <script src="script.js"></script>
+  <div id="animationSection" class="hidden">
+    <img id="magicBook" src="images/magic_book.png" alt="Magic Book">
+    <div id="sparkles"></div>
+    <p id="kidNameText"></p>
+  </div>
+
+  <div class="socials">
+    <p>Follow Joy Bounce TV for more magic!</p>
+    <a href="https://www.youtube.com/@joybouncetv" target="_blank">Subscribe on YouTube</a> |
+    <a href="https://www.instagram.com/joybouncetv/" target="_blank">Follow on Instagram</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
