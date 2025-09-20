@@ -1,93 +1,85 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: url('https://images.unsplash.com/photo-1606851094080-58e3fa53d4e2?auto=format&fit=crop&w=1200&q=80') no-repeat center center fixed;
-  background-size: cover;
   margin: 0;
-  padding: 0;
-  color: #333;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  color: #fff;
+  background: url("images/bg_main.png") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .container {
+  background: rgba(0, 0, 0, 0.6);
   padding: 20px;
-  background-color: rgba(255,255,255,0.7);
-  max-width: 600px;
-  margin: 30px auto;
   border-radius: 15px;
-}
-
-.input-section {
   margin: 20px auto;
+  max-width: 600px;
 }
 
-input[type="text"] {
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+input {
   padding: 10px;
-  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
 }
 
 button {
   padding: 10px 20px;
-  font-size: 16px;
-  margin-left: 10px;
+  border: none;
+  background: #ff69b4;
+  color: #fff;
+  border-radius: 10px;
   cursor: pointer;
+}
+
+button:hover {
+  background: #ff1493;
 }
 
 .hidden {
   display: none;
 }
 
-#animationSection {
-  margin-top: 20px;
-  position: relative;
-}
-
 #magicBook {
-  width: 300px;
-  animation: bookOpen 1s ease forwards;
+  width: 250px;
+  margin-top: 20px;
+  animation: bounce 2s infinite;
 }
 
-@keyframes bookOpen {
-  0% { transform: scale(0.5) rotateY(90deg); opacity: 0; }
-  100% { transform: scale(1) rotateY(0); opacity: 1; }
+#magicCard {
+  width: 200px;
+  margin: 20px auto;
 }
 
-#sparkles {
-  position: absolute;
+#sparklesContainer {
+  position: relative;
   width: 100%;
-  height: 300px;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+  height: 150px;
+  margin-top: 20px;
 }
 
 .sparkle {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background-size: cover;
-  animation: sparkleAnim 1s infinite;
+  width: 40px;
+  animation: float 3s infinite;
 }
 
-@keyframes sparkleAnim {
-  0% { transform: scale(0.5); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
-  100% { transform: scale(0.5); opacity: 1; }
-}
-
-#kidNameText {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #d81b60;
-}
-
-.socials {
+footer {
   margin-top: 30px;
 }
 
-.socials a {
-  color: #d81b60;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 5px;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  50% { transform: translateY(-30px) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0; }
 }
