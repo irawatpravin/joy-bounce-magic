@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joy Bounce Magic Book</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joy Bounce Magic</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-  <h1>✨ Welcome to the Joy Bounce Magic Book ✨</h1>
+  <div class="container">
+    <h1>✨ Joy Bounce Magic ✨</h1>
+    <p>Enter your kid’s name and watch the magic unfold!</p>
+    <input type="text" id="kidName" placeholder="Type your kid’s name">
+    <button onclick="startMagic()">Start Magic</button>
 
-  <div class="input-section">
-    <label for="kidName">Enter your kid's name:</label>
-    <input type="text" id="kidName" placeholder="Type name here">
-    <button onclick="startMagic()">Open Magic Book</button>
+    <!-- Magic Book -->
+    <div id="bookContainer" class="hidden">
+      <img id="magicBook" src="images/magic_book.png" alt="Magic Book">
+      <h2 id="kidNameText"></h2>
+    </div>
+
+    <!-- Mascot / Random Video -->
+    <div id="videoContainer" class="hidden">
+      <video id="mascotVideo" width="320" height="240" autoplay muted playsinline></video>
+    </div>
+
+    <!-- Magic Card -->
+    <div id="cardContainer" class="hidden">
+      <img id="cardImg" src="images/magic_card.png" alt="Magic Card">
+      <p>✨ Tap below to continue the magic ✨</p>
+      <a id="playlistLink" href="#" target="_blank">▶️ Watch More Magic</a>
+    </div>
+
+    <!-- Social Links -->
+    <footer>
+      <p>Follow us for more magic:</p>
+      <a href="https://www.youtube.com/@joybouncetv" target="_blank">YouTube</a> |
+      <a href="https://www.instagram.com/joybouncetv/" target="_blank">Instagram</a>
+    </footer>
   </div>
 
-  <div id="animationSection" class="hidden">
-    <img id="magicBook" src="images/magic_book.png" alt="Magic Book">
-    <div id="sparkles"></div>
-    <p id="kidNameText"></p>
-  </div>
-
-  <div class="socials">
-    <p>Follow Joy Bounce TV for more magic!</p>
-    <a href="https://www.youtube.com/@joybouncetv" target="_blank">Subscribe on YouTube</a> |
-    <a href="https://www.instagram.com/joybouncetv/" target="_blank">Follow on Instagram</a>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
