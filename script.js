@@ -1,4 +1,11 @@
-// Audio files (short 20–25 sec music)
+// 🎥 Random videos from Google Drive (direct download links)
+const VIDEOS = [
+  "https://drive.google.com/uc?export=download&id=1vspBFMoKLNbUDQFxD-UdD2yOWIYrQF9e",
+  "https://drive.google.com/uc?export=download&id=10g7QbNLkYLInxdqc6SQ43fI8Jjkw7Io8",
+  "https://drive.google.com/uc?export=download&id=1GMkxkWbLMbuX0GHETQl_YVjBOHO9CTh_"
+];
+
+// 🎶 Music tracks in audio folder
 const MUSIC = [
   "audio/music_folk.mp3",
   "audio/music_lullaby.mp3",
@@ -6,38 +13,52 @@ const MUSIC = [
   "audio/music_playful.mp3"
 ];
 
-// YouTube playlist
-const YOUTUBE_PLAYLIST_URL = "https://www.youtube.com/playlist?list=PLzWh30TTppb3qCxF-xvgDCiRN2QujgQtC";
+// 📌 YouTube Playlist
+const PLAYLIST_URL = "https://www.youtube.com/playlist?list=PLzWh30TTppb3qCxF-xvgDCiRN2QujgQtC";
+
+// Sparkle positions randomization
+function animateSparkles() {
+  const sparkles = document.querySelectorAll(".sparkle");
+  sparkles.forEach(sp => {
+    sp.style.left = Math.random() * 80 + "%";
+    sp.style.animationDuration = (2 + Math.random() * 2) + "s";
+  });
+}
 
 function startMagic() {
-  const name = document.getElementById("kidName").value.trim();
-  if(!name) { alert("Please enter a name!"); return; }
-
-  // Show animation section
-  const animSection = document.getElementById("animationSection");
-  animSection.classList.remove("hidden");
-
-  // Display kid's name
-  const nameText = document.getElementById("kidNameText");
-  nameText.innerText = `✨ ${name} ✨`;
-
-  // Add sparkles
-  const sparklesDiv = document.getElementById("sparkles");
-  for(let i=0;i<15;i++){
-    const s = document.createElement("div");
-    s.classList.add("sparkle");
-    s.style.backgroundImage = `url('images/sparkle${(i%3)+1}.png')`;
-    s.style.top = Math.random()*250 + "px";
-    s.style.left = Math.random()*250 + "px";
-    sparklesDiv.appendChild(s);
+  const kidName = document.getElementById("kidName").value;
+  if (!kidName) {
+    alert("Please enter your kid’s name!");
+    return;
   }
 
-  // Play random music
-  const music = new Audio(MUSIC[Math.floor(Math.random()*MUSIC.length)]);
-  music.play();
+  // Show Magic Book
+  document.getElementById("bookContainer").classList.remove("hidden");
 
-  // Redirect after 22 seconds
+  // Show Magic Card & kid name after 3s
   setTimeout(() => {
-    window.location.href = YOUTUBE_PLAYLIST_URL;
-  }, 22000);
+    document.getElementById("cardContainer").classList.remove("hidden");
+    document.getElementById("kidNameText").innerText = `✨ Hello ${kidName}! ✨`;
+
+    // Show sparkles
+    const sparklesContainer = document.getElementById("sparklesContainer");
+    sparklesContainer.classList.remove("hidden");
+    animateSparkles();
+  }, 3000);
+
+  // Play random background music
+  const randomMusic = MUSIC[Math.floor(Math.random() * MUSIC.length)];
+  const audio = new Audio(randomMusic);
+  audio.play();
+
+  // After 5s → show random video
+  setTimeout(() => {
+    document.getElementById("videoContainer").classList.remove("hidden");
+    const mascotVideo = document.getElementById("mascotVideo");
+    mascotVideo.src = VIDEOS[Math.floor(Math.random() * VIDEOS.length)];
+    mascotVideo.play();
+  }, 5000);
+
+  // Set YouTube playlist link
+  document.getElementById("playlistLink").href = PLAYLIST_URL;
 }
